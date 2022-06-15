@@ -2,6 +2,7 @@ const express = require('express');
 // const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const FileStore = require('session-file-store')(session);
+const path = require('path');
 const reactSsrMiddleware = require('../middlewares/reactSsr');
 
 // Конфигурация сессии
@@ -34,7 +35,6 @@ function expressConfig(app) {
   // расшифровывает json, который отправляется в запросах от клиента
   app.use(express.json());
 
-
   // расшифровывает куки в запросах от клиента
   // app.use(cookieParser());
 
@@ -43,6 +43,9 @@ function expressConfig(app) {
 
   // наша миддлварка для более компактного кода рендеринга
   app.use(reactSsrMiddleware);
+
+  // миддлварка для работы с фото
+  app.use('../img', express.static(path.join(__dirname, 'img')));
 }
 
 module.exports = expressConfig;
