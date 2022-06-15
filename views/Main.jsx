@@ -6,8 +6,7 @@ function Main({ user, orders }) {
   return (
     <Layout>
       <div id="orderList">{user && (orders && (
-        orders.map((order) => <Order key={order.id} order={order} />))
-      )}
+        orders.map((order) => <Order key={order.id} order={order} />)))}
       </div>
 
     </Layout>
