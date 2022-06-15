@@ -1,10 +1,15 @@
 const React = require('react');
 const Layout = require('./Layout');
+const Order = require('./orders/Order');
 
-function Main() {
+function Main({ user, orders }) {
   return (
     <Layout>
-      Главная
+      <div id="orderList">{user && (orders && (
+        orders.map((order) => <Order key={order.id} order={order} />))
+      )}
+      </div>
+
     </Layout>
   );
 }
