@@ -1,25 +1,44 @@
-'use strict';
 const {
-  Model
+  Model,
 } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class Courier extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      // define association here
+    static associate({ Order }) {
+      Courier.hasMany(Order, { foreignKey: 'courierId' });
     }
   }
   Courier.init({
-    name: DataTypes.TEXT,
-    password: DataTypes.TEXT,
-    phone: DataTypes.TEXT
+    id: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER,
+    },
+    name: {
+      allowNull: false,
+      type: DataTypes.TEXT,
+    },
+    password: {
+      allowNull: false,
+      type: DataTypes.TEXT,
+    },
+    phone: {
+      allowNull: false,
+      type: DataTypes.TEXT,
+    },
+    createdAt: {
+      allowNull: false,
+      type: DataTypes.DATE,
+    },
+    updatedAt: {
+      allowNull: false,
+      type: DataTypes.DATE,
+    },
   }, {
     sequelize,
     modelName: 'Courier',
+    tableName: 'Couriers',
   });
   return Courier;
 };

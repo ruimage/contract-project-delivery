@@ -1,36 +1,41 @@
-'use strict';
+const { DataTypes } = require('sequelize');
+
 module.exports = {
-  async up(queryInterface, Sequelize) {
+  async up(queryInterface) {
     await queryInterface.createTable('Users', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: DataTypes.INTEGER,
       },
       firstName: {
-        type: Sequelize.TEXT
+        allowNull: false,
+        type: DataTypes.TEXT,
       },
       lastName: {
-        type: Sequelize.TEXT
+        allowNull: false,
+        type: DataTypes.TEXT,
       },
       email: {
-        type: Sequelize.TEXT
+        allowNull: false,
+        type: DataTypes.TEXT,
       },
       password: {
-        type: Sequelize.TEXT
+        allowNull: false,
+        type: DataTypes.TEXT,
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: DataTypes.DATE,
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
-      }
+        type: DataTypes.DATE,
+      },
     });
   },
-  async down(queryInterface, Sequelize) {
+  async down(queryInterface) {
     await queryInterface.dropTable('Users');
-  }
+  },
 };

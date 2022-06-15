@@ -1,45 +1,69 @@
-'use strict';
+const { DataTypes } = require('sequelize');
+
 module.exports = {
-  async up(queryInterface, Sequelize) {
+  async up(queryInterface) {
     await queryInterface.createTable('Orders', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: DataTypes.INTEGER,
       },
       title: {
-        type: Sequelize.TEXT
+        allowNull: false,
+        type: DataTypes.TEXT,
       },
       description: {
-        type: Sequelize.TEXT
+        allowNull: false,
+        type: DataTypes.TEXT,
       },
       linkImg: {
-        type: Sequelize.TEXT
+        allowNull: false,
+        type: DataTypes.TEXT,
       },
       price: {
-        type: Sequelize.FLOAT
+        allowNull: false,
+        type: DataTypes.FLOAT,
       },
       sale: {
-        type: Sequelize.FLOAT
+        allowNull: false,
+        type: DataTypes.FLOAT,
       },
       cordN: {
-        type: Sequelize.FLOAT
+        allowNull: false,
+        type: DataTypes.FLOAT,
       },
       cordW: {
-        type: Sequelize.FLOAT
+        allowNull: false,
+        type: DataTypes.FLOAT,
+      },
+      userId: {
+        allowNull: false,
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'Users',
+          key: 'id',
+        },
+      },
+      courierId: {
+        allowNull: false,
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'Couriers',
+          key: 'id',
+        },
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: DataTypes.DATE,
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
-      }
+        type: DataTypes.DATE,
+      },
     });
   },
-  async down(queryInterface, Sequelize) {
+  async down(queryInterface) {
     await queryInterface.dropTable('Orders');
-  }
+  },
 };

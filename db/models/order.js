@@ -1,26 +1,73 @@
-'use strict';
 const {
-  Model
+  Model,
 } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class Order extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      // define association here
+    static associate({ User, Courier }) {
+      Order.belongsTo(User, { foreignKey: 'userId' });
+      Order.belongsTo(Courier, { foreignKey: 'courierId' });
     }
   }
   Order.init({
-    title: DataTypes.TEXT,
-    description: DataTypes.TEXT,
-    linkImg: DataTypes.TEXT,
-    price: DataTypes.FLOAT,
-    sale: DataTypes.FLOAT,
-    cordN: DataTypes.FLOAT,
-    cordW: DataTypes.FLOAT
+    id: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER,
+    },
+    title: {
+      allowNull: false,
+      type: DataTypes.TEXT,
+    },
+    description: {
+      allowNull: false,
+      type: DataTypes.TEXT,
+    },
+    linkImg: {
+      allowNull: false,
+      type: DataTypes.TEXT,
+    },
+    price: {
+      allowNull: false,
+      type: DataTypes.FLOAT,
+    },
+    sale: {
+      allowNull: false,
+      type: DataTypes.FLOAT,
+    },
+    cordN: {
+      allowNull: false,
+      type: DataTypes.FLOAT,
+    },
+    cordW: {
+      allowNull: false,
+      type: DataTypes.FLOAT,
+    },
+    userId: {
+      allowNull: false,
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'Users',
+        key: 'id',
+      },
+    },
+    courierId: {
+      allowNull: false,
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'Couriers',
+        key: 'id',
+      },
+    },
+    createdAt: {
+      allowNull: false,
+      type: DataTypes.DATE,
+    },
+    updatedAt: {
+      allowNull: false,
+      type: DataTypes.DATE,
+    },
   }, {
     sequelize,
     modelName: 'Order',
