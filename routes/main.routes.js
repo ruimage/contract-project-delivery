@@ -1,13 +1,12 @@
 const mainRouter = require('express').Router();
-const Main = require('../../views/Main');
-const Error = require('../../views/Error');
+const Main = require('../views/Main');
+const Error = require('../views/Error');
+const { Order } = require('../db/models');
 
 mainRouter.get('/', async (req, res) => {
   // если пользователь залогинен, то в хранилище сессии лежит его userId
-  const { userId } = req.session;
-  const user = userId && await User.findByPk(userId);
-
-  res.renderComponent(Main, { user });
+  const orders = await Order.findAll();
+  res.renderComponent(Main, { orders });
 });
 
 mainRouter.get('/error', (req, res) => {
