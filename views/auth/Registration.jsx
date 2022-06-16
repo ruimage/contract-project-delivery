@@ -1,12 +1,12 @@
 const React = require('react');
-const Layout = require('../Layout');
+const Layout = require('../templates/Layout');
 
 module.exports = function Registration() {
   return (
     <Layout>
       <h1>Регистрация</h1>
 
-      <form method="POST" action="/registration">
+      <form method="POST" action="/auth/register">
         <label htmlFor="title-input" className="reg-1">
           Имя:
         </label>
