@@ -32,6 +32,7 @@ module.exports = {
       cordN: {
         allowNull: false,
         type: DataTypes.FLOAT,
+
       },
       cordW: {
         allowNull: false,
@@ -39,6 +40,7 @@ module.exports = {
       },
       userId: {
         allowNull: false,
+        defaultValue: 0,
         type: DataTypes.INTEGER,
         references: {
           model: 'Users',
@@ -47,6 +49,7 @@ module.exports = {
       },
       courierId: {
         allowNull: false,
+        defaultValue: 0,
         type: DataTypes.INTEGER,
         references: {
           model: 'Couriers',

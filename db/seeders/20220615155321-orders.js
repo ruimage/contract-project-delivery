@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.bulkInsert('Orders', [
@@ -9,8 +10,7 @@ module.exports = {
         sale: 10,
         cordN: 59.925867,
         cordW: 30.310451,
-        userId: 0,
-        courierId: 0,
+
         createdAt: new Date(),
         updatedAt: new Date(),
       },
@@ -22,8 +22,6 @@ module.exports = {
         sale: 5,
         cordN: 59.926981,
         cordW: 30.315850,
-        userId: 0,
-        courierId: 0,
         createdAt: new Date(),
         updatedAt: new Date(),
       },

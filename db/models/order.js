@@ -56,6 +56,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     courierId: {
       allowNull: false,
+      defaultValue: 0,
       type: DataTypes.INTEGER,
       references: {
         model: 'Couriers',
