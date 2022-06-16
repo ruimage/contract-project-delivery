@@ -1,7 +1,6 @@
 const React = require('react');
-const Layout = require('./templates/Layout');
-const Order = require('./orders/Order');
-const NavBar = require('./NavBar');
+const Layout = require('../templates/Layout');
+const NavBar = require('../NavBar');
 
 module.exports = function Main({ user, orders }) {
   return (
@@ -17,11 +16,9 @@ module.exports = function Main({ user, orders }) {
         </form>
       </nav>
 
-      <div id="orderList">
-        {user &&
-          orders &&
-          orders.map((order) => <Order key={order.id} order={order} />)}
-      </div>
+      <div className="profile">{`Имя  ${user.firstName}`}</div>
+      <div className="profile">{`Фамилия ${user.lastName}`}</div>
+      <div className="profile">{`Почта ${user.email}`}</div>
     </Layout>
   );
 };

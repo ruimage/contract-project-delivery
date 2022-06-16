@@ -8,6 +8,7 @@ const Error = require('../views/templates/Error');
 const Registr = require('../views/auth/Registration');
 
 const { User } = require('../db/models');
+const { Courier } = require('../db/models');
 
 router.get('/register', async (req, res) => {
   const reg = React.createElement(Registr, {});
@@ -17,24 +18,37 @@ router.get('/register', async (req, res) => {
 });
 
 router.post('/register', async (req, res) => {
-  const {
-    firstName, lastName, email, password,
-  } = req.body;
-  const existingUser = await User.findOne({ where: { email } });
-  if (existingUser) {
-    res.send('Такой пользователь уже есть');
-    return;
-  }
+  const { firstName, lastName, email, password, role } = req.body;
 
   try {
-    const user = await User.create({
-      firstName,
-      lastName,
-      email,
-      password: await bcrypt.hash(password, 10),
-    });
-    req.session.userId = user.id;
-    res.redirect('/');
+    const existingUser = await User.findOne({ where: { email } });
+    if (existingUser) {
+      return res.send('Такой пользователь уже есть');
+    }
+
+    if (role === 'user') {
+      const user = await User.create({
+        firstName,
+        lastName,
+        email,
+        password: await bcrypt.hash(password, 10),
+      });
+
+      req.session.userId = user.id;
+
+      return res.redirect('/');
+    } else if (role === 'courier') {
+
+      const courier = await Courier.create({
+        name: firstName,
+        // lastName,
+        phone: '89999999999',
+        password: await bcrypt.hash(password, 10),
+      });
+
+      req.session.courierId = courier.id;
+      return res.redirect('/');
+    }
   } catch (error) {
     const errorPage = React.createElement(Error, {
       message: 'Не удалось получить записи из базы данных.',
