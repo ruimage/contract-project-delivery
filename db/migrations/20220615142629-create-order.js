@@ -32,13 +32,14 @@ module.exports = {
       cordN: {
         allowNull: false,
         type: DataTypes.FLOAT,
+
       },
       cordW: {
         allowNull: false,
         type: DataTypes.FLOAT,
       },
       userId: {
-        allowNull: false,
+        allowNull: true,
         type: DataTypes.INTEGER,
         references: {
           model: 'Users',
