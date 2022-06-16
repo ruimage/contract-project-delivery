@@ -1,7 +1,7 @@
 require('@babel/register');
 const express = require('express');
 const expressConfig = require('./config/express');
-
+const authorizationRouter = require('./routes/authorization.routes');
 const mainRouter = require('./routes/main.routes');
 
 const app = express();
@@ -9,6 +9,7 @@ const app = express();
 expressConfig(app);
 
 app.use('/', mainRouter);
+app.use('/registration', authorizationRouter);
 
 app.use((error, req, res, next) => {
   console.error('Произошла ошибка', error);
