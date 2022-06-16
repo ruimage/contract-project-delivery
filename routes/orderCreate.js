@@ -1,4 +1,3 @@
-require('dotenv');
 const React = require('react');
 const ReactDOMServer = require('react-dom/server');
 const multer = require('multer');
