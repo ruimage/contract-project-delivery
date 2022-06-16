@@ -24,14 +24,7 @@ function Layout({ children }) {
             integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
             crossOrigin="anonymous"
           />
-          <nav className=" bg-warning w-100 p-2">
-            <form className="d-flex ">
-              <div className="text-dark flex-grow-1 fw-bold text-decoration-none fs-2">
-                <a type="submit" href="/reg"><img src="/img/logo.png" width="100" alt=" " /></a>
-              </div>
-              <Navbar />
-            </form>
-          </nav>
+
         </header>
         <main>
           <div>

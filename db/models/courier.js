@@ -9,12 +9,6 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Courier.init({
-    id: {
-      allowNull: false,
-      autoIncrement: true,
-      primaryKey: true,
-      type: DataTypes.INTEGER,
-    },
     name: {
       allowNull: false,
       type: DataTypes.TEXT,

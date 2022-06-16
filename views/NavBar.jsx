@@ -1,11 +1,23 @@
 const React = require('react');
 
-module.exports = function NavBar() {
+const { Context } = require('../middlewares/reactSsr');
+
+module.exports = function NavBar({ user }) {
   return (
     <div className="d-flex flex-grow-2">
-      <a className="btn btn-outline-dark" href="/auth/register">Регистрация</a>
+      <a
+        className="btn btn-outline-dark"
+        href={user ? '/profile' : '/auth/register'}
+      >
+        {user ? user.firstName : 'Регистрация'}
+      </a>
       &nbsp;&nbsp;&nbsp;&nbsp;
-      <a className="btn btn-outline-dark" href="/auth/login">Войти</a>
+      <a
+        className="btn btn-outline-dark"
+        href={user ? '/auth/logout' : '/auth/login'}
+      >
+        {user ? 'Выйти' : 'Войти'}
+      </a>
     </div>
   );
 };
