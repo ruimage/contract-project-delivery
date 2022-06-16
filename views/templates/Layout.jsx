@@ -27,7 +27,7 @@ function Layout({ children }) {
           <nav className=" bg-warning w-100 p-1">
             <form className="d-flex ">
               <div className="text-dark flex-grow-1 fw-bold text-decoration-none fs-4">
-                <a type="submit" href="/reg"><img src="/img/logo.png" width="100" alt=" " /></a>
+                <a type="submit" href="/"><img src="/img/logo.png" width="100" alt=" " /></a>
               </div>
               <Navbar />
             </form>
