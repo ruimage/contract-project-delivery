@@ -39,8 +39,7 @@ module.exports = {
         type: DataTypes.FLOAT,
       },
       userId: {
-        allowNull: false,
-        defaultValue: 0,
+        allowNull: true,
         type: DataTypes.INTEGER,
         references: {
           model: 'Users',
@@ -49,7 +48,6 @@ module.exports = {
       },
       courierId: {
         allowNull: false,
-        defaultValue: 0,
         type: DataTypes.INTEGER,
         references: {
           model: 'Couriers',

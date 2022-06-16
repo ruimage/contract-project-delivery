@@ -46,9 +46,8 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.FLOAT,
     },
     userId: {
-      allowNull: false,
+      allowNull: true,
       type: DataTypes.INTEGER,
-      defaultValue: 0,
       references: {
         model: 'Users',
         key: 'id',
@@ -56,7 +55,6 @@ module.exports = (sequelize, DataTypes) => {
     },
     courierId: {
       allowNull: false,
-      defaultValue: 0,
       type: DataTypes.INTEGER,
       references: {
         model: 'Couriers',

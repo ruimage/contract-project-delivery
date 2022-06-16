@@ -12,9 +12,7 @@ mainRouter.get('/', async (req, res) => {
     where: {
       [Op.or]: [
         {
-          userId: {
-            [Op.ne]: 0,
-          },
+          userId: null,
         },
         { userId },
       ],
