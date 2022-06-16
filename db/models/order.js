@@ -9,6 +9,7 @@ module.exports = (sequelize, DataTypes) => {
       Order.belongsTo(Courier, { foreignKey: 'courierId' });
     }
   }
+
   Order.init({
     id: {
       allowNull: false,
@@ -45,7 +46,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.FLOAT,
     },
     userId: {
-      allowNull: false,
+      allowNull: true,
       type: DataTypes.INTEGER,
       references: {
         model: 'Users',

@@ -1,24 +1,39 @@
 const React = require('react');
-const Layout = require('../Layout');
+const Layout = require('../templates/Layout');
 
 module.exports = function Order() {
   return (
     <Layout>
-      <div id="orderNew">
-        <form
-          action="/orders"
-          method="POST"
-          className="order"
-          encType="multipart/form-data
-        "
-        >
-          <input className="img" name="img" type="file" value="text" placeholder="Загрузить файл" accept='image/png, image/jpg, image/jpeg'/>
-          <input className="orderTitle" name="title" value="text" placeholder="Заголовок" />
-          <input className="orderDescription" name="description" value="text" placeholder="Описание заказа" />
-          <input className="price" name="price" value="number" placeholder="Исходная цена заказа" />
-          <input className="salePrice" name="salePrice" value="number" placeholder="Скидка на заказ" />
-          <button className="accept" type="submit">Заказать</button>
-        </form>
+      <div id="ord" className="bg-warning">
+        <div>
+          Заполни форму
+        </div>
+        <div id="orderNew" className="bg-light">
+          <input
+            className="orderTitle form-control"
+            name="title"
+            placeholder="Заголовок"
+            aria-label="readonly input example"
+          />
+          <br />
+          <input className="orderDescription form-control " name="description" placeholder="Описание заказа" />
+          <br />
+          <input className="price form-control" name="price" placeholder="Исходная цена заказа" />
+          <br />
+          <input className="salePrice form-control" name="salePrice" placeholder="Скидка на заказ" />
+          <br />
+          <input
+            className="imageLink form-control"
+            name="imageLink"
+            type="file"
+            value="text"
+            placeholder="Ссылка на фото заказа"
+          />
+          <br />
+          <form action="/orders" method="POST" className="order">
+            <button className="accept btn btn-outline-dark" type="submit">Отправить</button>
+          </form>
+        </div>
       </div>
     </Layout>
   );
