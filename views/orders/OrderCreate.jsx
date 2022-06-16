@@ -28,6 +28,7 @@ module.exports = function Order() {
             type="file"
             value="text"
             placeholder="Ссылка на фото заказа"
+            accept="image/png, image/jpg, image/jpeg"
           />
           <br />
           <form action="/orders" method="POST" className="order">
