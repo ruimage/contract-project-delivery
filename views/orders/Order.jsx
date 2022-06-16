@@ -10,7 +10,7 @@ module.exports = function Order({ order }) {
       <img src={`${linkImg}`} alt="" />
       <p className="orderTitle">{title}</p>
       <p className="orderDescription">{description}</p>
-      <span className="price">Обысная цена: {price} </span>
+      <span className="price">Обычная цена: {price} </span>
       <span className="salePrice">Моя цена: {salePrice}</span>
       <form action={`/api/orders/${id}/accept`} method="POST" className="order">
         <button className="accept" type="submit">Заказать</button>
