@@ -18,6 +18,7 @@ module.exports = function Order() {
           <input className="price" name="price" value="number" placeholder="Исходная цена заказа" />
           <input className="salePrice" name="salePrice" value="number" placeholder="Скидка на заказ" />
           <button className="accept" type="submit">Заказать</button>
+
         </form>
       </div>
     </Layout>
