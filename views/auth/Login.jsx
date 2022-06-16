@@ -1,12 +1,12 @@
 const React = require('react');
-const Layout = require('../Layout');
+const Layout = require('../templates/Layout');
 
 module.exports = function Login() {
   return (
     <Layout>
       <h1>Авторизация</h1>
 
-      <form method="POST" action="/registration/login">
+      <form method="POST" action="/auth/login">
         <label htmlFor="title-input" className="reg-1">
           email:
         </label>

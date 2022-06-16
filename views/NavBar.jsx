@@ -3,9 +3,9 @@ const React = require('react');
 module.exports = function NavBar() {
   return (
     <div className="d-flex flex-grow-2">
-      <button type="submit" className="btn btn-outline-dark" href="#">Регистрация</button>
+      <a className="btn btn-outline-dark" href="/auth/register">Регистрация</a>
       &nbsp;&nbsp;&nbsp;&nbsp;
-      <button type="submit" className="btn btn-outline-dark" href="#">Войти</button>
+      <a className="btn btn-outline-dark" href="/auth/login">Войти</a>
     </div>
   );
 };

@@ -2,23 +2,24 @@ const router = require('express').Router();
 const ReactDOMServer = require('react-dom/server');
 const React = require('react');
 
-const Login = require('../views/auth/Login');
-const Error = require('../views/Error');
-const Registr = require('../views/auth/Registration');
 const bcrypt = require('bcrypt');
+const Login = require('../views/auth/Login');
+const Error = require('../views/templates/Error');
+const Registr = require('../views/auth/Registration');
 
 const { User } = require('../db/models');
 
-router.get('/', async (req, res) => {
+router.get('/register', async (req, res) => {
   const reg = React.createElement(Registr, {});
   const html = ReactDOMServer.renderToStaticMarkup(reg);
-  console.log(html);
   res.write('<!DOCTYPE html>');
   res.end(html);
 });
 
-router.post('/', async (req, res) => {
-  const { firstName, lastName, email, password } = req.body;
+router.post('/register', async (req, res) => {
+  const {
+    firstName, lastName, email, password,
+  } = req.body;
   const existingUser = await User.findOne({ where: { email } });
   if (existingUser) {
     res.send('Такой пользователь уже есть');

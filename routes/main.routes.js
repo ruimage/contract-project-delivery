@@ -1,6 +1,6 @@
 const mainRouter = require('express').Router();
 const Main = require('../views/Main');
-const Error = require('../views/Error');
+const Error = require('../views/templates/Error');
 const { Order } = require('../db/models');
 
 mainRouter.get('/', async (req, res) => {

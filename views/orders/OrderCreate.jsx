@@ -1,5 +1,5 @@
 const React = require('react');
-const Layout = require('../Layout');
+const Layout = require('../templates/Layout');
 
 module.exports = function Order() {
   return (
@@ -12,7 +12,14 @@ module.exports = function Order() {
           encType="multipart/form-data
         "
         >
-          <input className="img" name="img" type="file" value="text" placeholder="Загрузить файл" accept='image/png, image/jpg, image/jpeg'/>
+          <input
+            className="img"
+            name="img"
+            type="file"
+            value="text"
+            placeholder="Загрузить файл"
+            accept="image/png, image/jpg, image/jpeg"
+          />
           <input className="orderTitle" name="title" value="text" placeholder="Заголовок" />
           <input className="orderDescription" name="description" value="text" placeholder="Описание заказа" />
           <input className="price" name="price" value="number" placeholder="Исходная цена заказа" />
