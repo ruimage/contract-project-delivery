@@ -12,7 +12,7 @@ module.exports = function Order({ order }) {
       <p className="orderDescription">{description}</p>
       <span className="price">Обысная цена: {price} </span>
       <span className="salePrice">Моя цена: {salePrice}</span>
-      <form action={`/orders/${id}/accept`} method="POST" className="order">
+      <form action={`/api/orders/${id}/accept`} method="POST" className="order">
         <button className="accept" type="submit">Заказать</button>
       </form>
     </div>
