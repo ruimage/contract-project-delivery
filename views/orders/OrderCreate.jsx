@@ -4,7 +4,14 @@ const Layout = require('../templates/Layout');
 module.exports = function Order() {
   return (
     <Layout>
-      <div id="ord" className="bg-warning">
+      <div
+        id="ord"
+        className="bg-warning"
+        action="/orders"
+        method="POST"
+        encType="multipart/form-data
+        "
+      >
         <div>
           Заполни форму
         </div>
