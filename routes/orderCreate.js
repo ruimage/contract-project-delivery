@@ -1,8 +1,13 @@
-require('dotenv');
 const React = require('react');
 const ReactDOMServer = require('react-dom/server');
-const multer = require('multer');
-const orderCreate = require('../views/orders/OrderCreate');
-const takePic = require('../middlewares/takePic');
 
-const upload = multer({ storage });
+const orderCreate = require('express').Router();
+const OrderCreate = require('../views/orders/OrderCreate');
+
+orderCreate.get('/', (req, res) => {
+  const order = React.createElement(OrderCreate, {});
+  const html = ReactDOMServer.renderToStaticMarkup(order);
+  res.write('<!DOCTYPE html');
+  res.end(html);
+});
+module.exports = orderCreate;
