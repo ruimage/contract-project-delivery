@@ -1,5 +1,5 @@
 const React = require('react');
-const Layout = require('../Layout');
+const Layout = require('../templates/Layout');
 
 module.exports = function Order() {
   return (
@@ -9,7 +9,12 @@ module.exports = function Order() {
           Заполни форму
         </div>
         <div id="orderNew" className="bg-light">
-          <input className="orderTitle form-control" name="title" placeholder="Заголовок" aria-label="readonly input example" />
+          <input
+            className="orderTitle form-control"
+            name="title"
+            placeholder="Заголовок"
+            aria-label="readonly input example"
+          />
           <br />
           <input className="orderDescription form-control " name="description" placeholder="Описание заказа" />
           <br />
@@ -17,7 +22,13 @@ module.exports = function Order() {
           <br />
           <input className="salePrice form-control" name="salePrice" placeholder="Скидка на заказ" />
           <br />
-          <input className="imageLink form-control" name="imageLink" type="file" value="text" placeholder="Ссылка на фото заказа" />
+          <input
+            className="imageLink form-control"
+            name="imageLink"
+            type="file"
+            value="text"
+            placeholder="Ссылка на фото заказа"
+          />
           <br />
           <form action="/orders" method="POST" className="order">
             <button className="accept btn btn-outline-dark" type="submit">Отправить</button>
