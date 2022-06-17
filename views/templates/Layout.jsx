@@ -1,5 +1,6 @@
 const React = require('react');
 const Navbar = require('../NavBar');
+const NavBar = require('../NavBar');
 
 function Layout({ children }) {
   return (
@@ -27,14 +28,6 @@ function Layout({ children }) {
             integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
             crossOrigin="anonymous"
           />
-          <nav className=" bg-warning w-100 p-1">
-            <form className="d-flex ">
-              <div className="text-dark flex-grow-1 fw-bold text-decoration-none fs-4">
-                <a type="submit" href="/"><img src="/img/logo.png" width="100" alt=" " /></a>
-              </div>
-              <Navbar />
-            </form>
-          </nav>
         </header>
         <main>
           <div>
