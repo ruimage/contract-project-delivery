@@ -7,12 +7,12 @@ module.exports = function Order({ order }) {
   const salePrice = price - (price * sale / 100);
   return (
     <div id={`order-${id}`}>
+      <img src={`${linkImg}`} alt="" />
+      <p className="orderTitle">{title}</p>
+      <p className="orderDescription">{description}</p>
+      <span className="price">Обычная цена: {price} </span>
+      <span className="salePrice">Моя цена: {salePrice}</span>
       <form action={`/api/orders/${id}/accept`} method="POST" className="order">
-        <img src={`${linkImg}`} alt="" />
-        <p className="orderTitle">{title}</p>
-        <p className="orderDescription">{description}</p>
-        <span className="price">Обычная цена: {price} </span>
-        <span className="salePrice">Моя цена: {salePrice}</span>
         <button className="accept" type="submit">Заказать</button>
       </form>
     </div>
