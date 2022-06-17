@@ -5,16 +5,7 @@ const NavBar = require('../NavBar');
 module.exports = function Profile({ user }) {
   return (
     <Layout>
-      <nav className=" bg-warning w-100 p-2">
-        <form className="d-flex ">
-          <div className="text-dark flex-grow-1 fw-bold text-decoration-none fs-2">
-            <a type="submit" href="/">
-              <img src="/img/logo.png" width="100" alt=" " />
-            </a>
-          </div>
-          <NavBar user={user} />
-        </form>
-      </nav>
+      <NavBar user={user} title="Профиль" />
       <div className="glavn">
         <div className="bg-warning">
           <div className="bg-light">

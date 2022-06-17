@@ -9,7 +9,7 @@ module.exports = function Registration() {
       <Navbar title="Регистрация" />
       <div className="boxReg bg-warning">
         <div className="formReg bg-light">
-          <h1>Регистрация</h1>
+          <h3>Регистрация</h3>
 
           <form method="POST" action="/auth/register">
             <label htmlFor="title-input" className="reg-1">
@@ -61,7 +61,7 @@ module.exports = function Registration() {
             <fieldset>
               <legend>Выберите тип профиля:</legend>
               <input required type="radio" id="powers1" name="role" value="user" />
-              <label htmlFor="powers1">Пользователь</label>
+              <label htmlFor="powers1"> Пользователь</label>
               <br />
               <input
                 required
