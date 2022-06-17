@@ -4,7 +4,9 @@ const Layout = require('./Layout');
 function Error() {
   return (
     <Layout>
-      <h1 className="mb-1">Произошла какая-то ошибка :(</h1>
+      <div className="bg-warning">
+        <h1 className="mb-1">Произошла какая-то ошибка :(</h1>
+      </div>
     </Layout>
   );
 }

@@ -1,8 +1,9 @@
 .boxReg {
   width: 40%;
-  height: 430px;
+  height: 480px;
   margin-top: 3%;
-  margin-left: 25%;
+  margin-left: 33%;
+  padding-right: 30px;
   border-radius: 2%;
   display: flex;
   align-items: center;
@@ -18,7 +19,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-left: 16%;
+  padding-left: 10%;
   padding-right: 18%;
   border: solid;
 }

@@ -5,12 +5,13 @@
 
 .cardsBox {
   width: 30%;
+  height: 430px;
   margin-top: 10px;
   border-radius: 2%;
 }
 
 .cardsForm {
-  border-radius: 2%;
+  /* border-radius: 2%;
   border: solid;
   height: 370px;
   width: 200px;
@@ -18,7 +19,7 @@
   margin-bottom: 6px;
   margin-left: 37px;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap; */
   padding-bottom: 10px;
   padding-left: 5px;
   padding-top: 5px;
@@ -29,6 +30,9 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  margin: 10px;
+  margin: 9px;
 }
 
+.img-cards {
+  margin-left: 10px;
+}

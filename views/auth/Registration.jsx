@@ -55,21 +55,20 @@ module.exports = function Registration() {
               tabIndex="1"
               className="reg-form form-control"
             />
-        <fieldset>
-          <legend>Выберите тип профиля:</legend>
+            <fieldset>
+              <input required type="radio" id="powers1" name="role" value="user" />
+              <label htmlFor="powers1">Пользователь</label>
 
-          <input required type="radio" id="powers1" name="role" value="user" />
-          <label htmlFor="powers1">Пользователь</label>
-
-          <input
-            required
-            type="radio"
-            id="powers2"
-            name="role"
-            value="courier"
-          />
-          <label htmlFor="powers2">Курьер</label>
-        </fieldset>
+              <br />
+              <input
+                required
+                type="radio"
+                id="powers2"
+                name="role"
+                value="courier"
+              />
+              <label htmlFor="powers2">Курьер</label>
+            </fieldset>
 
             <button type="submit" tabIndex="2" className="button-reg btn btn-outline-dark">
               Зарегистрироваться

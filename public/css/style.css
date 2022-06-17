@@ -29,3 +29,10 @@
   justify-content: center;
 }
 
+.deckription {
+  margin-top: 1px;
+  margin-bottom: 1px;
+  overflow:scroll;
+  border: solid;
+  border-radius: 2%;
+}
