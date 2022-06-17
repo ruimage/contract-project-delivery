@@ -9,15 +9,19 @@ module.exports = {
         primaryKey: true,
         type: DataTypes.INTEGER,
       },
-      name: {
+      firstName: {
+        allowNull: false,
+        type: DataTypes.TEXT,
+      },
+      lastName: {
+        allowNull: false,
+        type: DataTypes.TEXT,
+      },
+      email: {
         allowNull: false,
         type: DataTypes.TEXT,
       },
       password: {
-        allowNull: false,
-        type: DataTypes.TEXT,
-      },
-      phone: {
         allowNull: false,
         type: DataTypes.TEXT,
       },
