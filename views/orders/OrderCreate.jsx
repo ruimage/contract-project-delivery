@@ -1,9 +1,11 @@
 const React = require('react');
 const Layout = require('../templates/Layout');
+const NavBar = require('../NavBar');
 
-module.exports = function Order() {
+module.exports = function Order({ user }) {
   return (
     <Layout>
+      <NavBar user={user} title="Создать заказ" />
       <div
         id="ord"
         className="bg-warning"
