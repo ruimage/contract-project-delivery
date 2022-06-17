@@ -7,15 +7,19 @@ module.exports = function Order() {
       <div
         id="ord"
         className="bg-warning"
-        action="/orders"
-        method="POST"
-        encType="multipart/form-data
-        "
       >
         <div>
           Заполни форму
         </div>
-        <div id="orderNew" className="bg-light">
+        <div
+          id="orderNew"
+          className="bg-light"
+          action="/orders"
+          method="POST"
+          encType="multipart/form-data"
+          accept="image/png, image/jpg, image/jpeg"
+
+        >
           <input
             className="orderTitle form-control"
             name="title"
@@ -29,16 +33,16 @@ module.exports = function Order() {
           <br />
           <input className="salePrice form-control" name="salePrice" placeholder="Скидка на заказ" />
           <br />
+
           <input
             className="imageLink form-control"
-            name="imageLink"
+            name="orderPic"
             type="file"
             value="text"
             placeholder="Ссылка на фото заказа"
-            accept="image/png, image/jpg, image/jpeg"
           />
           <br />
-          <form action="/orders" method="POST" className="order">
+          <form action="/order" method="POST" className="order">
             <button className="accept btn btn-outline-dark" type="submit">Отправить</button>
           </form>
         </div>

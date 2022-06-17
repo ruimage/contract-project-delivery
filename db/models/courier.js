@@ -9,21 +9,20 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Courier.init({
-    id: {
+
+    firstName: {
       allowNull: false,
-      autoIncrement: true,
-      primaryKey: true,
-      type: DataTypes.INTEGER,
+      type: DataTypes.TEXT,
     },
-    name: {
+    lastName: {
+      allowNull: false,
+      type: DataTypes.TEXT,
+    },
+    email: {
       allowNull: false,
       type: DataTypes.TEXT,
     },
     password: {
-      allowNull: false,
-      type: DataTypes.TEXT,
-    },
-    phone: {
       allowNull: false,
       type: DataTypes.TEXT,
     },
