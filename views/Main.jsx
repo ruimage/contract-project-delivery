@@ -6,16 +6,8 @@ const NavBar = require('./NavBar');
 module.exports = function Main({ user, orders }) {
   return (
     <Layout>
-      <nav className=" bg-warning w-100 p-2">
-        <form className="d-flex ">
-          <div className="text-dark flex-grow-1 fw-bold text-decoration-none fs-2">
-            <a type="submit" href="/">
-              <img src="/img/logo.png" width="100" alt=" " />
-            </a>
-          </div>
-          <NavBar user={user} />
-        </form>
-      </nav>
+
+      <NavBar user={user} title="Заказы" />
       <div id="orderList">
         {user
           && orders

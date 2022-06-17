@@ -2,7 +2,7 @@ const React = require('react');
 const Layout = require('../templates/Layout');
 const NavBar = require('../NavBar');
 
-module.exports = function Main({ user, orders }) {
+module.exports = function Profile({ user }) {
   return (
     <Layout>
       <nav className=" bg-warning w-100 p-2">

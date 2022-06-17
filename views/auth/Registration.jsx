@@ -1,9 +1,12 @@
+/* eslint-disable jsx-a11y/tabindex-no-positive */
 const React = require('react');
 const Layout = require('../templates/Layout');
+const Navbar = require('../NavBar');
 
 module.exports = function Registration() {
   return (
     <Layout>
+      <Navbar title="Регистрация" />
       <div className="boxReg bg-warning">
         <div className="formReg bg-light">
           <h1>Регистрация</h1>
@@ -56,9 +59,9 @@ module.exports = function Registration() {
               className="reg-form form-control"
             />
             <fieldset>
+              <legend>Выберите тип профиля:</legend>
               <input required type="radio" id="powers1" name="role" value="user" />
               <label htmlFor="powers1">Пользователь</label>
-
               <br />
               <input
                 required
