@@ -1,0 +1,39 @@
+#img {
+  width: 190px;
+  height: 140px;
+}
+
+.cardsBox {
+  width: 30%;
+  height: 430px;
+  margin-top: 10px;
+  border-radius: 2%;
+  box-shadow: 5px 3px 3px white;
+}
+
+.cardsForm {
+  /* border-radius: 2%;
+  border: solid;
+  height: 370px;
+  width: 200px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  margin-left: 37px;
+  display: flex;
+  flex-wrap: wrap; */
+  padding-bottom: 10px;
+  padding-left: 5px;
+  padding-top: 5px;
+  padding-right: 5px;
+}
+
+#orderList {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 9px;
+}
+
+.img-cards {
+  margin-left: 10px;
+}

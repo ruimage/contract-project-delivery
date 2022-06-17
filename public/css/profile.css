@@ -1,0 +1,28 @@
+.bg-warning {
+  width: 30%;
+  border-radius: 2%;
+  margin-bottom: 40px;
+}
+
+.bg-light {
+  border-radius: 2%;
+  border: solid;
+  height: 370px;
+  width: 220px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  margin-left: 33px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  padding-top: 10px;
+  padding-right: 5px;
+}
+
+.glavn {
+  display: flex;
+  align-content: space-around;
+  align-items: center;
+  justify-content: center;
+}
