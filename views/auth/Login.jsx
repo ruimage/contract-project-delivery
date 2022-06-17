@@ -6,7 +6,7 @@ const Navbar = require('../NavBar');
 module.exports = function Login() {
   return (
     <Layout>
-      <Navbar />
+      <Navbar title="Авторизация" />
       <div className="boxLogin bg-warning">
         <div className="formLogin bg-light">
           <h2>Авторизация</h2>
