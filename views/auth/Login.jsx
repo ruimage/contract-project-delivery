@@ -9,7 +9,7 @@ module.exports = function Login() {
       <Navbar title="Авторизация" />
       <div className="boxLogin bg-warning">
         <div className="formLogin bg-light">
-          <h2>Авторизация</h2>
+          <h3>Авторизация</h3>
           <form method="POST" action="/auth/login">
             <label htmlFor="title-input" className="reg-1">
               email:

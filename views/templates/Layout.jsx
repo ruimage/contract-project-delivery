@@ -20,6 +20,7 @@ function Layout({ children }) {
         <link href="/css/login.css" rel="stylesheet" />
         <link rel="stylesheet" href="/css/registration.css" />
         <link rel="stylesheet" href="/css/cards.css" />
+        <link rel="stylesheet" href="/css/profile.css" />
       </head>
       <body className="back">
         <header>

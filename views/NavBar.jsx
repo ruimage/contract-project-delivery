@@ -11,9 +11,9 @@ module.exports = function NavBar({ user, title }) {
             <img src="/img/logo.png" width="100" alt=" " />
           </a>
         </div>
-
-        <h1>{title || ''}</h1>
-
+        <div>
+          <h3 className="title">{title || ''}</h3>
+        </div>
         <div className="d-flex flex-grow-2">
           <a
             className="btn btn-outline-dark"

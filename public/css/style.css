@@ -29,3 +29,18 @@
   justify-content: center;
 }
 
+.deckription {
+  margin-top: 1px;
+  margin-bottom: 1px;
+  overflow:scroll;
+  border: solid;
+  border-radius: 2%;
+}
+
+.title {
+  display: flex;
+  align-content: center;
+  position: absolute;
+  left: 380px;
+  top: 20px;
+}
