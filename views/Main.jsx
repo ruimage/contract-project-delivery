@@ -6,7 +6,8 @@ const NavBar = require('./NavBar');
 module.exports = function Main({ user, orders }) {
   return (
     <Layout>
-      <NavBar user={user} />
+
+      <NavBar user={user} title="Заказы" />
       <div id="orderList">
         {user
           && orders

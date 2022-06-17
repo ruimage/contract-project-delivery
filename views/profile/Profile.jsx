@@ -5,7 +5,7 @@ const NavBar = require('../NavBar');
 module.exports = function Profile({ user }) {
   return (
     <Layout>
-      <NavBar user={user} />
+      <NavBar user={user} title="Профиль пользователя" />
 
       <div className="profile">{`Имя  ${user.firstName}`}</div>
       <div className="profile">{`Фамилия ${user.lastName}`}</div>

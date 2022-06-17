@@ -6,7 +6,7 @@ const Navbar = require('../NavBar');
 module.exports = function Registration() {
   return (
     <Layout>
-      <Navbar />
+      <Navbar title="Регистрация" />
       <div className="boxReg bg-warning">
         <div className="formReg bg-light">
           <h1>Регистрация</h1>
