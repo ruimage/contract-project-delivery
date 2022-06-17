@@ -2,7 +2,7 @@ const React = require('react');
 const Layout = require('../templates/Layout');
 const NavBar = require('../NavBar');
 
-module.exports = function Main({ user, orders }) {
+module.exports = function Main({ courier, user, orders }) {
   return (
     <Layout>
       <nav className=" bg-warning w-100 p-2">
@@ -12,7 +12,7 @@ module.exports = function Main({ user, orders }) {
               <img src="/img/logo.png" width="100" alt=" " />
             </a>
           </div>
-          <NavBar user={user} />
+          <NavBar user={user} courier={courier} />
         </form>
       </nav>
 

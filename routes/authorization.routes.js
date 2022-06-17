@@ -22,8 +22,11 @@ router.post('/register', async (req, res) => {
 
   try {
     const existingUser = await User.findOne({ where: { email } });
+    const existingCourier = await Courier.findOne({ where: { email } });
     if (existingUser) {
       return res.send('Такой пользователь уже есть');
+    } else if (existingCourier) {
+      return res.send('Такой курьер уже есть');
     }
 
     if (role === 'user') {
@@ -38,11 +41,10 @@ router.post('/register', async (req, res) => {
 
       return res.redirect('/');
     } else if (role === 'courier') {
-
       const courier = await Courier.create({
-        name: firstName,
-        // lastName,
-        phone: '89999999999',
+        firstName,
+        lastName,
+        email,
         password: await bcrypt.hash(password, 10),
       });
 
@@ -71,8 +73,12 @@ router.post('/login', async (req, res) => {
   const { email, password } = req.body;
   try {
     const user = await User.findOne({ where: { email } });
+    const courier = await Courier.findOne({ where: { email } });
     if (user && (await bcrypt.compare(password, user.password))) {
       req.session.userId = user.id;
+      res.redirect('/');
+    } else if (courier && (await bcrypt.compare(password, courier.password))) {
+      req.session.courierId = courier.id;
       res.redirect('/');
     } else {
       res.status(400).json({
