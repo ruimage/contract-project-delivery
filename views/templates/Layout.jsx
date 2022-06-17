@@ -16,6 +16,9 @@ function Layout({ children }) {
           crossOrigin="anonymous"
         />
         <link href="/css/style.css" rel="stylesheet" />
+        <link href="/css/login.css" rel="stylesheet" />
+        <link rel="stylesheet" href="/css/registration.css" />
+        <link rel="stylesheet" href="/css/cards.css" />
       </head>
       <body className="back">
         <header>
@@ -24,6 +27,14 @@ function Layout({ children }) {
             integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
             crossOrigin="anonymous"
           />
+          <nav className=" bg-warning w-100 p-1">
+            <form className="d-flex ">
+              <div className="text-dark flex-grow-1 fw-bold text-decoration-none fs-4">
+                <a type="submit" href="/"><img src="/img/logo.png" width="100" alt=" " /></a>
+              </div>
+              <Navbar />
+            </form>
+          </nav>
         </header>
         <main>
           <div>
