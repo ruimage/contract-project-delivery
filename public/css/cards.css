@@ -8,6 +8,7 @@
   height: 430px;
   margin-top: 10px;
   border-radius: 2%;
+  box-shadow: 5px 3px 3px white;
 }
 
 .cardsForm {
