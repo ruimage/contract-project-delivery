@@ -13,6 +13,7 @@ module.exports = function Main({ user, orders }) {
           && orders
           && orders.map((order) => <Order key={order.id} order={order} />)}
       </div>
+      <script defer src="/JS/orders.js" />
     </Layout>
   );
 };

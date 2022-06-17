@@ -2,11 +2,11 @@ const React = require('react');
 
 module.exports = function Order({ order }) {
   const {
-    id, title, description, price, sale, linkImg,
+    id, title, description, price, sale, linkImg, userId,
   } = order;
   const salePrice = price - (price * sale / 100);
   return (
-    <div id={`order-${id}`} className="cardsBox bg-warning">
+    <div id={`order-${id}`} className="orderContainer cardsBox bg-warning" data-client={userId || 0}>
       <div className="cardsForm bg-light">
         <div className="img-cards">
           <img src={`${linkImg}`} alt="" id="img" />
