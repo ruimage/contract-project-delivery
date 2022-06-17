@@ -33,11 +33,10 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.DATE,
       },
     },
-    {
-      sequelize,
-      modelName: 'Courier',
-      tableName: 'Couriers',
-    }
-  );
+   {
+    sequelize,
+    modelName: 'Courier',
+    tableName: 'Couriers',
+  });
   return Courier;
 };
